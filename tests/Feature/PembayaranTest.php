@@ -7,7 +7,7 @@ use Livewire\Volt\Volt;
 test('customer dapat mengirim konfirmasi pembayaran manual', function () {
     $this->seed();
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
     $pesanan = Pesanan::create([
         'customer_id' => $customer->id,
         'nomor' => 'ARL-TEST-BAYAR',

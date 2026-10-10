@@ -11,9 +11,9 @@ test('database seeder creates roles, users, categories and products', function (
     $this->assertDatabaseHas('kategori', ['slug' => 'cleanser']);
     $this->assertDatabaseCount('produk', 4);
 
-    $admin = User::where('email', 'admin@arlova.my.id')->firstOrFail();
+    $admin = User::where('email', 'admin@gmail.com')->firstOrFail();
     $this->assertTrue($admin->hasRole('admin'));
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
     $this->assertTrue($customer->hasRole('customer'));
 });

@@ -52,7 +52,7 @@ test('product detail page renders by slug', function () {
 test('store home page renders logout button for authenticated user', function () {
     $this->seed();
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
 
     $this->actingAs($customer)
         ->get('/')
@@ -70,7 +70,7 @@ test('authenticated user can add product to cart from detail page', function () 
     $this->seed();
 
     $produk = Produk::where('slug', 'vitamin-c-serum')->firstOrFail();
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
 
     $this->actingAs($customer);
 
@@ -95,7 +95,7 @@ test('checkout page requires login', function () {
 test('authenticated customer can open checkout page with cart', function () {
     $this->seed();
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
     $produk = Produk::where('slug', 'vitamin-c-serum')->firstOrFail();
 
     session()->put('keranjang', [$produk->id => 2]);
@@ -109,7 +109,7 @@ test('authenticated customer can open checkout page with cart', function () {
 test('pesanan sukses page renders by nomor for authenticated user', function () {
     $this->seed();
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
     $pesanan = Pesanan::create([
         'customer_id' => $customer->id,
         'nomor' => 'ARL-TEST-001',
@@ -132,7 +132,7 @@ test('pesanan sukses page renders by nomor for authenticated user', function () 
 test('pembayaran page renders by nomor for authenticated user', function () {
     $this->seed();
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
     $pesanan = Pesanan::create([
         'customer_id' => $customer->id,
         'nomor' => 'ARL-TEST-002',
@@ -155,7 +155,7 @@ test('pembayaran page renders by nomor for authenticated user', function () {
 test('pesanan history page renders orders for the customer', function () {
     $this->seed();
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
     Pesanan::create([
         'customer_id' => $customer->id,
         'nomor' => 'ARL-TEST-003',

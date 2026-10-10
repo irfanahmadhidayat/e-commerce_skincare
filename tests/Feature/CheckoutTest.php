@@ -7,7 +7,7 @@ use Livewire\Volt\Volt;
 test('checkout menyimpan pesanan dan mengosongkan keranjang', function () {
     $this->seed();
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
     $produk = Produk::where('slug', 'vitamin-c-serum')->firstOrFail();
 
     session()->put('keranjang', [$produk->id => 2]);
@@ -34,7 +34,7 @@ test('checkout menyimpan pesanan dan mengosongkan keranjang', function () {
 test('checkout memvalidasi field wajib', function () {
     $this->seed();
 
-    $customer = User::where('email', 'customer@example.com')->firstOrFail();
+    $customer = User::where('email', 'cust@gmail.com')->firstOrFail();
     $produk = Produk::where('slug', 'vitamin-c-serum')->firstOrFail();
 
     session()->put('keranjang', [$produk->id => 1]);
